@@ -1,3 +1,5 @@
+
+
 <div class="sub-cate">
 	<div class=" top-nav rsidebar span_1_of_left">
 		<h3 class="cate">CATEGORIES</h3>
@@ -36,17 +38,25 @@
 			</div>
 		</div>
 		<!-- grids_of_4 -->
-		<a *ngFor="let product of products"  [routerLink]="['/detail', product.id]">
+		<!-- <div *ngIf="json">
+		<div *ngFor="let x of json.results">
+			{{x.nama_barang}}
+			</div>
+
+		{{json.results[0].nama_barang}}
+	</div> -->
+		<div *ngIf="json">
+		<a *ngFor="let product of json.results"  [routerLink]="['/detail', product.id_barang]">
 	<div class="grid-product">
 		  <div class="  product-grid">
 			<div class="content_box">
 			   	<div class="left-grid-view grid-view-left">
-			   	   	 <img src="{{product.images}}" class="img-responsive watch-right" alt=""/>
+			   	   	 <img src="{{product.gambar}}" class="img-responsive watch-right" alt=""/>
 				</div>
-					<h4><a href="#"> {{product.name}}</a></h4>
+					<h4><a href="#"> {{product.nama_barang}}</a></h4>
 				    <div class="star-price">
 	   		     				<div class="dolor-grid"> 
-									<span class="actual">{{product.price}}</span>
+									<span class="actual">{{product.harga_barang}}</span>
 	   		     				</div>
 	   		     				<a class="now-get get-cart" href="#">ADD TO CART</a> 
 	   		     			<div class="clearfix"> </div>
@@ -56,4 +66,5 @@
 		</div>
 	</div>
 	</a>
+	</div>
 

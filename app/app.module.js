@@ -8,11 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
+var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var component_1 = require("./dashboard/component");
 var products_component_1 = require("./product/products.component");
 var product_detail_component_1 = require("./product/product-detail.component");
 var product_service_1 = require("./product/product.service");
+var httpservice_service_1 = require("./product/httpservice.service");
 var app_routing_module_1 = require("./app-routing.module");
 var AppModule = (function () {
     function AppModule() {
@@ -24,7 +26,8 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
-            app_routing_module_1.AppRoutingModule
+            app_routing_module_1.AppRoutingModule,
+            http_1.HttpModule
         ],
         declarations: [
             app_component_1.AppComponent,
@@ -32,7 +35,7 @@ AppModule = __decorate([
             product_detail_component_1.ProductDetailComponent,
             products_component_1.ProductsComponent
         ],
-        providers: [product_service_1.ProductService],
+        providers: [product_service_1.ProductService, httpservice_service_1.HTTPService],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

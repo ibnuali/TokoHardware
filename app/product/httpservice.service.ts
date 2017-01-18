@@ -9,7 +9,7 @@ import 'rxjs/Rx';
 export class HTTPService{
   constructor(private http:Http){}
 
-  getJsonMenu(){
+  getJsonProduct(){
 
     let requestOption: RequestOptions;
     let myHeaders    : Headers = new Headers();
@@ -22,4 +22,19 @@ export class HTTPService{
     .toPromise().then(res=>res.json());
   }
 
+  getJsonDetailProduct(selectProduct){
+
+    let requestOption: RequestOptions;
+    let myHeaders    : Headers = new Headers();
+    myHeaders.append('Content-type', 'application/json');
+    myHeaders.append('Accept', 'application/json');
+    let params = new URLSearchParams();
+    params.set('id_barang',selectProduct)
+
+    requestOption = new RequestOptions({headers: myHeaders , search: params});
+
+    return this.http.get("http://127.0.0.1:8000/rakitpc/api/Barang/?format=json", requestOption)
+    .toPromise().then(res=>res.json());
+  }
+  
 }

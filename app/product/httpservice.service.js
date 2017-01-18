@@ -17,12 +17,23 @@ var HTTPService = (function () {
     function HTTPService(http) {
         this.http = http;
     }
-    HTTPService.prototype.getJsonMenu = function () {
+    HTTPService.prototype.getJsonProduct = function () {
         var requestOption;
         var myHeaders = new http_1.Headers();
         myHeaders.append('Content-type', 'application/json');
         myHeaders.append('Accept', 'application/json');
         requestOption = new http_2.RequestOptions({ headers: myHeaders });
+        return this.http.get("http://127.0.0.1:8000/rakitpc/api/Barang/?format=json", requestOption)
+            .toPromise().then(function (res) { return res.json(); });
+    };
+    HTTPService.prototype.getJsonDetailProduct = function (selectProduct) {
+        var requestOption;
+        var myHeaders = new http_1.Headers();
+        myHeaders.append('Content-type', 'application/json');
+        myHeaders.append('Accept', 'application/json');
+        var params = new http_2.URLSearchParams();
+        params.set('id_barang', selectProduct);
+        requestOption = new http_2.RequestOptions({ headers: myHeaders, search: params });
         return this.http.get("http://127.0.0.1:8000/rakitpc/api/Barang/?format=json", requestOption)
             .toPromise().then(function (res) { return res.json(); });
     };

@@ -1,6 +1,5 @@
 import { Product } from './product';
 import { PRODUCTS } from '../mock/mock-products';
-import { CART } from '../mock/mock-cart';
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -19,7 +18,7 @@ export class ProductService {
     return this.getProducts()
                .then(products => products.find(product => product.id === id));
   }
-
+/*
   addToCart(product: Product): void {
 
     let cart: Cart ;
@@ -50,5 +49,5 @@ export class ProductService {
     localStorage.setItem('cart', JSON.stringify(CART));
     return isFound;
   }
-
+*/
 }

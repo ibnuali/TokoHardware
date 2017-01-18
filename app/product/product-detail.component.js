@@ -13,24 +13,25 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 var product_service_1 = require("./product.service");
+var httpservice_service_1 = require("./httpservice.service");
 var ProductDetailComponent = (function () {
-    function ProductDetailComponent(productService, route, location) {
+    function ProductDetailComponent(productService, route, location, httpService) {
         this.productService = productService;
         this.route = route;
         this.location = location;
+        this.httpService = httpService;
     }
     ProductDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        //this.httpService.getJsonMenu().then(res=>this.json = JSON.stringify(res)),err=>alert(err);
-        this.route.params
-            .switchMap(function (params) { return _this.productService.getProduct(+params['id']); })
-            .subscribe(function (product) { return _this.product = product; });
+        this.route.params.switchMap(function (params) {
+            return _this.httpService.getJsonDetailProduct(+params['id']);
+        }).subscribe(function (res) { return _this.json = res; });
+        // this.route.params
+        //   .switchMap((params: Params) => this.productService.getProduct(+params['id']))
+        //   .subscribe(product => this.product = product);
     };
     ProductDetailComponent.prototype.goBack = function () {
         this.location.back();
-    };
-    ProductDetailComponent.prototype.addToCart = function (product) {
-        this.productService.addToCart(product);
     };
     return ProductDetailComponent;
 }());
@@ -42,7 +43,8 @@ ProductDetailComponent = __decorate([
     }),
     __metadata("design:paramtypes", [product_service_1.ProductService,
         router_1.ActivatedRoute,
-        common_1.Location])
+        common_1.Location,
+        httpservice_service_1.HTTPService])
 ], ProductDetailComponent);
 exports.ProductDetailComponent = ProductDetailComponent;
 //# sourceMappingURL=product-detail.component.js.map

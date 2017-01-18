@@ -21,7 +21,7 @@ var ProductsComponent = (function () {
     ProductsComponent.prototype.getProducts = function () {
         var _this = this;
         //this.productService.getProducts().then(products => this.products = products);
-        this.httpService.getJsonMenu().then(function (res) { return _this.json = JSON.stringify(res); }), function (err) { return alert(err); };
+        this.httpService.getJsonProduct().then(function (res) { return _this.json = JSON.stringify(res); }), function (err) { return alert(err); };
     };
     ProductsComponent.prototype.ngOnInit = function () {
         this.getProducts();

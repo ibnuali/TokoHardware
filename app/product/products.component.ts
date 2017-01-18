@@ -25,7 +25,7 @@ json;
 
   getProducts(): void {
     //this.productService.getProducts().then(products => this.products = products);
-    this.httpService.getJsonMenu().then(res=>this.json = JSON.stringify(res)),err=>alert(err);
+    this.httpService.getJsonProduct().then(res=>this.json = JSON.stringify(res)),err=>alert(err);
   }
 
   ngOnInit(): void {

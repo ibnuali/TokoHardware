@@ -47,39 +47,44 @@
 			</ul>
     </div>
 </div>
+		<!-- grids_of_4 -->
+		<!-- <div *ngIf="json">
+		<div *ngFor="let x of json.results">
+			{{x.nama_barang}}
+			</div>
 
-<div *ngIf="product">
+		{{json.results[0].nama_barang}}
+	</div> -->
+<div *ngIf="json">
 <div class="container"> 
 	 	<div class=" single_top">
 	      <div class="single_grid">
 				<div class="grid images_3_of_2">
 						<ul id="etalage">
 							<li>
-								<a href="optionallink.html">
-									<img class="etalage_thumb_image" src="{{product.images}}" class="img-responsive" />
+								<a>
+									<img class="etalage_thumb_image" src="{{json.results[0].gambar}}" class="img-responsive" />
 								</a>
 							</li>
 						</ul>
 						 <div class="clearfix"> </div>		
 				  </div> 
 				  <div class="desc1 span_3_of_2">
-				  
-					
-					<h4>{{product.name}}</h4>
+					<h4>{{json.results[0].nama_barang}}</h4>
 				<div class="cart-b">
-					<div class="left-n ">{{product.price}}</div>
+					<div class="left-n ">{{json.results[0].harga_barang}}</div>
 				    <a class="now-get get-cart-in" href="#">ADD TO CART</a> 
 				    <div class="clearfix"></div>
 				 </div>
-				 <!--<h6>100 items in stock</h6> -->
-			   	<p>{{product.desc}}</p>
+				 <h6>{{json.results[0].stok}} items in stock</h6>
 				</div>
           	    <div class="clearfix"> </div>
           	   </div>
           	   <ul id="flexiselDemo1">
 		 </ul>
-	
+	<h2>Deskripsi Barang</h2>
+	<pre>{{json.results[0].deskripi}}</pre>
     </div>
-    <div class="clearfix"> </div>			
+    <div class="clearfix"> </div>	
 </div>
 </div>
