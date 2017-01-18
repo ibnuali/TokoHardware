@@ -1,0 +1,85 @@
+<!--<div *ngIf="processor">
+  <h2>{{processor.name}} details</h2>
+  <div class="itemProc {{processor.name.split(' ').join('')}}">{{processor.name}}</div>
+  <div><label>Number of Cores :</label>{{processor.cores}}</div>
+  <div><label>Number of Threads :</label>{{processor.threads}}</div>
+  <div><label>Processor Base Frequency :</label>{{processor.frequency}}</div>
+  <div><label>Cache :</label>{{processor.cache}}</div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="addCart()">Add to Cart</button>
+  <button (click)="addWish()">Add to Wishlist</button>
+</div>-->
+<script src="js/jquery.etalage.min.js"></script>
+<script>
+			jQuery(document).ready(function($){
+
+				$('#etalage').etalage({
+					thumb_image_width: 300,
+					thumb_image_height: 400,
+					source_image_width: 900,
+					source_image_height: 1200,
+					show_hint: true,
+					click_callback: function(image_anchor, instance_id){
+						alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+					}
+				});
+
+			});
+		</script>
+
+<div class="sub-cate">
+	<div class=" top-nav rsidebar span_1_of_left">
+		<h3 class="cate">CATEGORIES</h3>
+			<ul class="menu">
+				<ul class="kid-menu ">
+ 								<li><a class=" " onclick="openMenu(event, '1')" >Motherboard</a></li>
+                                <li><a class=" " onclick="openMenu(event, '2')" >Processor</a></li>
+                                <li><a class=" " onclick="openMenu(event, '3')" >Memory</a></li>
+                                <li><a class=" " onclick="openMenu(event, '4')" >Graphic Card</a></li>
+                                <li><a class=" " onclick="openMenu(event, '5')" >Cooler</a></li>
+                                <li><a class=" " onclick="openMenu(event, '6')" >Fan</a></li>
+                                <li><a class=" " onclick="openMenu(event, '7')" >Hard Disk</a></li>
+                                <li><a class=" " onclick="openMenu(event, '8')" >Monitor</a></li>
+                                <li><a class=" " onclick="openMenu(event, '9')" >Mouse</a></li>
+                                <li><a class=" " onclick="openMenu(event, '10')" >Keyboard</a></li>
+                                <li><a class=" " onclick="openMenu(event, '11')" >Speaker</a></li>
+				</ul>
+			</ul>
+    </div>
+</div>
+
+<div *ngIf="product">
+<div class="container"> 
+	 	<div class=" single_top">
+	      <div class="single_grid">
+				<div class="grid images_3_of_2">
+						<ul id="etalage">
+							<li>
+								<a href="optionallink.html">
+									<img class="etalage_thumb_image" src="{{product.images}}" class="img-responsive" />
+								</a>
+							</li>
+						</ul>
+						 <div class="clearfix"> </div>		
+				  </div> 
+				  <div class="desc1 span_3_of_2">
+				  
+					
+					<h4>{{product.name}}</h4>
+				<div class="cart-b">
+					<div class="left-n ">{{product.price}}</div>
+				    <a class="now-get get-cart-in" href="#">ADD TO CART</a> 
+				    <div class="clearfix"></div>
+				 </div>
+				 <!--<h6>100 items in stock</h6> -->
+			   	<p>{{product.desc}}</p>
+				</div>
+          	    <div class="clearfix"> </div>
+          	   </div>
+          	   <ul id="flexiselDemo1">
+		 </ul>
+	
+    </div>
+    <div class="clearfix"> </div>			
+</div>
+</div>

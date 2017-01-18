@@ -1,0 +1,37 @@
+<div class="container"> 
+	 	<div class=" single_top">
+       <a *ngFor="let product of products"  [routerLink]="['/detail', product.id]">
+	      <div class="single_grid">
+				<div class="grid images_3_of_2">
+						<ul id="etalage">
+							<li>
+								<a href="optionallink.html">
+									<img class="etalage_thumb_image" src="images/m535m337-bluetooth-mouse.png" class="img-responsive" />
+									<img class="etalage_source_image" src="images/m535m337-bluetooth-mouse.png" class="img-responsive" title="" />
+								</a>
+							</li>
+						</ul>
+						 <div class="clearfix"> </div>		
+				  </div> 
+				  <div class="desc1 span_3_of_2">
+				  
+					<h4>{{product.name}}</h4>
+				<div class="cart-b">
+					<div class="left-n ">{{product.price}}</div>
+				    <a class="now-get get-cart-in" href="#">ADD TO CART</a> 
+				    <div class="clearfix"></div>
+				 </div>
+			<!--	 <h6>100 items in stock</h6> -->
+			   	<p>{{product.desc}}</p>
+				</div>
+          	    <div class="clearfix"> </div>
+          	   </div>
+          	   <ul id="flexiselDemo1">
+		 </ul>
+     </a>
+    </div>
+</div>
+sdfghjkl;
+<div *ngIf="json">
+{{json}}fhgjjkll;
+  </div>
