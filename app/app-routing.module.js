@@ -9,10 +9,12 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var component_1 = require("./dashboard/component");
 var product_detail_component_1 = require("./product/product-detail.component");
+var cart_component_1 = require("./cart/cart.component");
 var routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: component_1.DashboardComponent },
-    { path: 'detail/:id', component: product_detail_component_1.ProductDetailComponent }
+    { path: 'detail/:id', component: product_detail_component_1.ProductDetailComponent },
+    { path: 'cart', component: cart_component_1.CartComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

@@ -13,11 +13,13 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 var product_service_1 = require("./product.service");
+var cart_service_1 = require("../cart/cart.service");
 var httpservice_service_1 = require("./httpservice.service");
 var ProductDetailComponent = (function () {
-    function ProductDetailComponent(productService, route, location, httpService) {
+    function ProductDetailComponent(productService, route, cartService, location, httpService) {
         this.productService = productService;
         this.route = route;
+        this.cartService = cartService;
         this.location = location;
         this.httpService = httpService;
     }
@@ -33,6 +35,9 @@ var ProductDetailComponent = (function () {
     ProductDetailComponent.prototype.goBack = function () {
         this.location.back();
     };
+    ProductDetailComponent.prototype.addToCart = function (productJson) {
+        this.cartService.addToCart(productJson);
+    };
     return ProductDetailComponent;
 }());
 ProductDetailComponent = __decorate([
@@ -43,6 +48,7 @@ ProductDetailComponent = __decorate([
     }),
     __metadata("design:paramtypes", [product_service_1.ProductService,
         router_1.ActivatedRoute,
+        cart_service_1.CartService,
         common_1.Location,
         httpservice_service_1.HTTPService])
 ], ProductDetailComponent);

@@ -8,7 +8,10 @@ import { DashboardComponent }   from './dashboard/component';
 import { ProductsComponent }      from './product/products.component';
 import { ProductDetailComponent }  from './product/product-detail.component';
 import { ProductService } from './product/product.service';
+import { CartComponent } from './cart/cart.component';
+import { CartService } from './cart/cart.service';
 import { HTTPService } from './product/httpservice.service';
+import { CategoryService } from './category/category.service';
  
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -23,9 +26,15 @@ import { AppRoutingModule }     from './app-routing.module';
     AppComponent,
     DashboardComponent,
     ProductDetailComponent,
-    ProductsComponent
+    ProductsComponent,
+    CartComponent
     ],
-  providers:  [ ProductService,HTTPService],
+  providers:  [ 
+    ProductService,
+    HTTPService,
+    CartService,
+    CategoryService
+    ],
   bootstrap:  [ AppComponent ]
 })
 export class AppModule { }

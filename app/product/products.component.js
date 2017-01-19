@@ -11,11 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var product_service_1 = require("./product.service");
+var cart_service_1 = require("../cart/cart.service");
 var httpservice_service_1 = require("./httpservice.service");
 var ProductsComponent = (function () {
-    function ProductsComponent(router, productService, httpService) {
+    function ProductsComponent(router, productService, cartService, httpService) {
         this.router = router;
         this.productService = productService;
+        this.cartService = cartService;
         this.httpService = httpService;
     }
     ProductsComponent.prototype.getProducts = function () {
@@ -29,6 +31,9 @@ var ProductsComponent = (function () {
     ProductsComponent.prototype.onSelect = function (product) {
         this.selectedProduct = product;
     };
+    ProductsComponent.prototype.addToCart = function (product) {
+        this.cartService.addToCart(product);
+    };
     return ProductsComponent;
 }());
 ProductsComponent = __decorate([
@@ -39,6 +44,7 @@ ProductsComponent = __decorate([
     }),
     __metadata("design:paramtypes", [router_1.Router,
         product_service_1.ProductService,
+        cart_service_1.CartService,
         httpservice_service_1.HTTPService])
 ], ProductsComponent);
 exports.ProductsComponent = ProductsComponent;

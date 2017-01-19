@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { Product } from './product';
 import { ProductService } from './product.service';
+import { CartService } from '../cart/cart.service';
 import {HTTPService} from './httpservice.service';
 
 @Component({
@@ -18,6 +19,7 @@ export class ProductsComponent implements OnInit {
   constructor(
     private router: Router,
     private productService: ProductService,
+    private cartService: CartService,
     private httpService: HTTPService
     ) { }
 
@@ -34,6 +36,10 @@ json;
 
   onSelect(product: Product): void {
     this.selectedProduct = product;
+  }
+
+    addToCart(product: Product): void {
+    this.cartService.addToCart(product);
   }
 
 }

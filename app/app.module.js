@@ -14,7 +14,10 @@ var component_1 = require("./dashboard/component");
 var products_component_1 = require("./product/products.component");
 var product_detail_component_1 = require("./product/product-detail.component");
 var product_service_1 = require("./product/product.service");
+var cart_component_1 = require("./cart/cart.component");
+var cart_service_1 = require("./cart/cart.service");
 var httpservice_service_1 = require("./product/httpservice.service");
+var category_service_1 = require("./category/category.service");
 var app_routing_module_1 = require("./app-routing.module");
 var AppModule = (function () {
     function AppModule() {
@@ -33,9 +36,15 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             component_1.DashboardComponent,
             product_detail_component_1.ProductDetailComponent,
-            products_component_1.ProductsComponent
+            products_component_1.ProductsComponent,
+            cart_component_1.CartComponent
         ],
-        providers: [product_service_1.ProductService, httpservice_service_1.HTTPService],
+        providers: [
+            product_service_1.ProductService,
+            httpservice_service_1.HTTPService,
+            cart_service_1.CartService,
+            category_service_1.CategoryService
+        ],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

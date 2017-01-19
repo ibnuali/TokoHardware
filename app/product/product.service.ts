@@ -1,5 +1,7 @@
 import { Product } from './product';
 import { PRODUCTS } from '../mock/mock-products';
+import { Cart } from '../cart/cart'
+import { CART } from '../mock/mock-cart';
 import { Injectable } from '@angular/core';
 
 @Injectable()

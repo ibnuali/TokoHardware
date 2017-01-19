@@ -32,17 +32,18 @@
 		<h3 class="cate">CATEGORIES</h3>
 			<ul class="menu">
 				<ul class="kid-menu ">
- 								<li><a class=" " onclick="openMenu(event, '1')" >Motherboard</a></li>
-                                <li><a class=" " onclick="openMenu(event, '2')" >Processor</a></li>
-                                <li><a class=" " onclick="openMenu(event, '3')" >Memory</a></li>
-                                <li><a class=" " onclick="openMenu(event, '4')" >Graphic Card</a></li>
-                                <li><a class=" " onclick="openMenu(event, '5')" >Cooler</a></li>
-                                <li><a class=" " onclick="openMenu(event, '6')" >Fan</a></li>
-                                <li><a class=" " onclick="openMenu(event, '7')" >Hard Disk</a></li>
-                                <li><a class=" " onclick="openMenu(event, '8')" >Monitor</a></li>
-                                <li><a class=" " onclick="openMenu(event, '9')" >Mouse</a></li>
-                                <li><a class=" " onclick="openMenu(event, '10')" >Keyboard</a></li>
-                                <li><a class=" " onclick="openMenu(event, '11')" >Speaker</a></li>
+ 								<li><a class=" " onclick="openMenu(event, '1')" >Hard Disk</a></li>
+                                <li><a class=" " onclick="openMenu(event, '2')" >Mouse</a></li>
+                                <li><a class=" " onclick="openMenu(event, '3')" >Monitor</a></li>
+                                <li><a class=" " onclick="openMenu(event, '4')" >Printer</a></li>
+                                <li><a class=" " onclick="openMenu(event, '5')" >RAM</a></li>
+                                <li><a class=" " onclick="openMenu(event, '6')" >Scanner</a></li>
+                                <li><a class=" " onclick="openMenu(event, '7')" >Keyboard</a></li>
+                                <li><a class=" " onclick="openMenu(event, '8')" >Processor</a></li>
+                                <li><a class=" " onclick="openMenu(event, '9')" >SSD</a></li>
+                                <li><a class=" " onclick="openMenu(event, '10')" >Motherboard</a></li>
+                                <!--<li><a class=" " onclick="openMenu(event, '11')" >Speaker</a></li>
+								<li><a class=" " onclick="openMenu(event, '12')" >Graphic Card</a></li>-->
 				</ul>
 			</ul>
     </div>
@@ -72,8 +73,9 @@
 				  <div class="desc1 span_3_of_2">
 					<h4>{{json.results[0].nama_barang}}</h4>
 				<div class="cart-b">
-					<div class="left-n ">{{json.results[0].harga_barang}}</div>
-				    <a class="now-get get-cart-in" href="#">ADD TO CART</a> 
+					<div class="left-n ">Rp. {{json.results[0].harga_barang}}</div>
+				    <a (click)="addToCart(json.results[0])" class="now-get get-cart-in">ADD TO CART</a>
+					<!--<a class="now-get get-cart-in" href="#">ADD TO CART</a> -->
 				    <div class="clearfix"></div>
 				 </div>
 				 <h6>{{json.results[0].stok}} items in stock</h6>
